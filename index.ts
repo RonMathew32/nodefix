@@ -18,7 +18,9 @@ const createLogonMessage = () => {
   message.addField(Messages.HeartBtInt, "30");
   message.addField(Messages.ResetSeqNumFlag, "Y");
   message.addField(Messages.DefaultApplVerID, fixVersions.DEFAULT_APPL_VER_ID);
-  console.log(message, 'message');
+
+  // Log the message content
+  console.log('Logon Message:', message.toString());
   
   return message;
 };
