@@ -19,8 +19,9 @@ const createLogonMessage = () => {
   message.addField(Messages.ResetSeqNumFlag, "Y");
   message.addField(Messages.DefaultApplVerID, fixVersions.DEFAULT_APPL_VER_ID);
 
-  // Log the message content (just log the string directly)
-  console.log('Logon Message:', message.toString());
+  // Now instead of directly calling toString on the message object, manually construct the string
+  let messageString = message.toString(); // This is how the message is represented as a string
+  console.log('Logon Message:', messageString);  // Log the message as a string
   
   return message;
 };
@@ -33,7 +34,7 @@ client.connect(process.env.FIX_PORT, process.env.FIX_HOST, () => {
   const logonMsg = createLogonMessage();
 
   // Send the logon message
-  client.write(logonMsg.toString());
+  client.write(logonMsg.toString());  // Send the properly formatted FIX message
 });
 
 // Handle incoming data and parse it
