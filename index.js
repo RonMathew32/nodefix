@@ -4,7 +4,6 @@ var net = require('net');
 var fix = require('fix-protocol');
 var config_1 = require("./config");
 var client = new net.Socket();
-console.log(config_1.config, 'config');
 client.connect(config_1.config.port, config_1.config.host, function () {
     console.log('Connected to PSX MDGW');
     var logonMsg = fix.createMessage([
