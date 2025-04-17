@@ -1,0 +1,56 @@
+module.exports = {
+    FIXT: {
+      VERSION: 'FIXT.1.1',
+      BEGIN_STRING: 'FIXT.1.1'
+    },
+    FIX: {
+      VERSION: 'FIX.5.0',
+      SP1: 'FIX.5.0SP1',
+      SP2: 'FIX.5.0SP2'
+    },
+    DEFAULT_APPL_VER_ID: 'FIX.5.0SP2',
+    MSG_TYPES: {
+      LOGON: 'A',
+      LOGOUT: '5',
+      HEARTBEAT: '0',
+      TEST_REQUEST: '1',
+      MARKET_DATA_REQUEST: 'V',
+      MARKET_DATA_SNAPSHOT: 'W',
+      MARKET_DATA_INCREMENTAL: 'X',
+      SECURITY_LIST_REQUEST: 'x',
+      SECURITY_LIST: 'y',
+      TRADING_SESSION_STATUS_REQUEST: 'g',
+      TRADING_SESSION_STATUS: 'h'
+    },
+    FIELDS: {
+      BEGIN_STRING: 8,
+      BODY_LENGTH: 9,
+      MSG_TYPE: 35,
+      SENDER_COMP_ID: 49,
+      TARGET_COMP_ID: 56,
+      MSG_SEQ_NUM: 34,
+      SENDING_TIME: 52,
+      ENCRYPT_METHOD: 98,
+      HEART_BT_INT: 108,
+      RESET_SEQ_NUM_FLAG: 141,
+      DEFAULT_APPL_VER_ID: 1137,
+      MD_REQ_ID: 262,
+      SUBSCRIPTION_REQUEST_TYPE: 263,
+      MARKET_DEPTH: 264,
+      MD_UPDATE_TYPE: 265,
+      NO_MD_ENTRY_TYPES: 267,
+      MD_ENTRY_TYPE: 269,
+      NO_RELATED_SYM: 146,
+      SYMBOL: 55,
+      SECURITY_ID: 48,
+      SECURITY_ID_SOURCE: 22,
+      PRODUCT: 460,
+      SECURITY_REQ_ID: 320,
+      SECURITY_LIST_REQUEST_TYPE: 559,
+      TRAD_SES_REQ_ID: 335,
+      TRADING_SESSION_ID: 336,
+      TRAD_SES_STATUS: 340,
+      TEST_REQ_ID: 112,
+      TEXT: 58
+    }
+  }; 
