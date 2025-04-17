@@ -1,4 +1,3 @@
-var _this = this;
 var net = require("net");
 var fix = require("fix-protocol");
 var fixVersions = require("./config/index.ts");
@@ -8,7 +7,16 @@ var client = new net.Socket();
 client.connect(process.env.FIX_PORT, process.env.FIX_HOST, function () {
     console.log("Connected to PSX MDGW");
     var logonMsg = fix.createMessage([
-        [Messages.BeginString, fixVersions.FIXT.BEGIN_STRING][(Messages.SenderCompID, _this.config.senderCompID)][(Messages.TargetCompID, _this.config.targetCompID)][(Messages.MsgSeqNum, "1")][(Messages.SendingTime, new Date().toISOString())][(Messages.MsgType, fixVersions.MSG_TYPES.LOGON)][(Messages.EncryptMethod, "0")][(Messages.HeartBtInt, "30")][(Messages.ResetSeqNumFlag, "Y")][(Messages.DefaultApplVerID, fixVersions.DEFAULT_APPL_VER_ID)],
+        [Messages.BeginString, fixVersions.FIXT.BEGIN_STRING],
+        [Messages.SenderCompID, process.env.FIX_SENDER],
+        [Messages.TargetCompID, process.env.FIX_TARGET],
+        [Messages.MsgSeqNum, "1"],
+        [Messages.SendingTime, new Date().toISOString()],
+        [Messages.MsgType, fixVersions.MSG_TYPES.LOGON],
+        [Messages.EncryptMethod, "0"],
+        [Messages.HeartBtInt, "30"],
+        [Messages.ResetSeqNumFlag, "Y"],
+        [Messages.DefaultApplVerID, fixVersions.DEFAULT_APPL_VER_ID],
     ], true);
     client.write(logonMsg);
 });
